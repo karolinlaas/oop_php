@@ -24,6 +24,11 @@ b) väljastatud muutjate väärtused koos sobiva tekstiga html faili kujul
  * Katseta vähemalt kolme HTML värviga - red, blue, orange - vastavalt tingimuslauses määra punane, sinine ja oranz
  * */
 
+// Ülesanne 3
+/*
+ * Loo tabelis gradient, kasutades for loopi
+ * */
+
 $eesnimi = 'Karolin';
 $perekonnanimi = 'Laas';
 $kursuseTahis = 'KD';
@@ -32,15 +37,19 @@ $email = 'karolin.laas@khk.ee';
 
 $varv = 'sinine';
 
+$ridadeArv = 8;
+$veergudeArv = 9;
+
 echo '
  <!doctype html>
     <html>
         <head>
             <title> Kontroll </title>
+            <link type="text/css" rel="stylesheet" href="style.css">
         </head> 
         <body>
             <h2>Minu nimi on '.$eesnimi.' '.$perekonnanimi.'</h2> 
-            <h3>Õpin kursusel '.$kursuseTahis, $kursuseNumber.'</h3>
+            <h3>Õpin kursusel '.$kursuseTahis.$kursuseNumber.'</h3>
             <h3>Minu kooli e-mail on '.$email.'</h3>';
 
             if($varv == 'punane') {
@@ -52,6 +61,20 @@ echo '
             } else {
                 echo '<h3>Sobiv värv pole valitud</h3>';
             }
+
+            echo '<table>';
+            for($reanumber = 2; $reanumber <= $ridadeArv; $reanumber++) {
+                echo '<tr>';
+                for ($veeruNumber = 1; $veeruNumber <= $veergudeArv; $veeruNumber++) {
+                    $taustavarv = '#A'.$veeruNumber.$reanumber.$veeruNumber.$reanumber.$veeruNumber;
+                    echo '<td style="background-color: '.$taustavarv.'">';
+                        echo $reanumber;
+                    echo '</td>';
+                }
+                echo '</tr>';
+            }
+
+            echo '</table>';
 echo '
         </body>
     </html>

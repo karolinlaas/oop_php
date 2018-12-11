@@ -32,7 +32,7 @@ $toevaartusFalse = false;
  * }
  * */
 $naitaSisu = 0;
-$naitaPeidetudInfo = 1;
+$naitaPeidetudInfo = 0;
 // tsüklid
 // for
 /*
@@ -52,37 +52,33 @@ $veergudeArv = 5;
         </head> 
         <body>';
 
-//        if($naitaSisu == true) {
-//            echo '<h1>' . $sisuPealkiri . '</h1>';
-//      echo '
-//                    <h1> ' . $sisuPealkiri . ' </h1>
-//                    <h3>Andmetüübid</h3>
-//                    <ul>
-//                        <li>$taisarv = ' . $taisarv . ' - ' . gettype($taisarv) . '</li>
-//                        <li>$reaalarv = ' . $reaalarv . ' - ' . gettype($reaalarv) . '</li>
-//                        <li>$tekst = ' . $tekst . ' - ' . gettype($tekst) . '</li>
-//                        <li>$toevaartusTrue = ' . $toevaartusTrue . ' - ' . gettype($toevaartusTrue) . '</li>
-//                        <li>$toevaartusFalse = ' . $toevaartusFalse . ' - ' . gettype($toevaartusFalse) . '</li>
-//                    </ul>
-//                    ';
-//            // tüübi teisendamise katse
-//            echo $taisarv . ' + ' . $taisarv . ' = ' . ($taisarv + $taisarv);
-//            echo '<br>';
-//            settype($taisarv, 'string');
-//            echo $taisarv . ' + ' . $taisarv . ' = ' . ($taisarv + $taisarv);
-//            echo '<br>';
-//            echo gettype($taisarv);
-//        } else if($naitaSisu == 1) {
-//            echo '<h4>See on tavaline info.</h4>';
-//        } else if($naitaSisu == 0){
-//            echo '<h4>See on tavaline peidetud info.</h4>';
-//        } else {
-//            if ($naitaPeidetudInfo == true) {
-//                echo '<h4>See on peidetud info.</h4>';
-//            } else {
-//                echo '<h4>Kõik on saladus.</h4>';
-//            }
-//        }
+        if($naitaSisu == true) {
+            echo '<h1>' . $sisuPealkiri . '</h1>';
+      echo '
+                    <h1> ' . $sisuPealkiri . ' </h1>
+                    <h3>Andmetüübid</h3>
+                    <ul>
+                        <li>$taisarv = ' . $taisarv . ' - ' . gettype($taisarv) . '</li>
+                        <li>$reaalarv = ' . $reaalarv . ' - ' . gettype($reaalarv) . '</li>
+                        <li>$tekst = ' . $tekst . ' - ' . gettype($tekst) . '</li>
+                        <li>$toevaartusTrue = ' . $toevaartusTrue . ' - ' . gettype($toevaartusTrue) . '</li>
+                        <li>$toevaartusFalse = ' . $toevaartusFalse . ' - ' . gettype($toevaartusFalse) . '</li>
+                    </ul>
+                    ';
+            // tüübi teisendamise katse
+            echo $taisarv . ' + ' . $taisarv . ' = ' . ($taisarv + $taisarv);
+            echo '<br>';
+            settype($taisarv, 'string');
+            echo $taisarv . ' + ' . $taisarv . ' = ' . ($taisarv + $taisarv);
+            echo '<br>';
+            echo gettype($taisarv);
+        } else {
+            if ($naitaPeidetudInfo == true) {
+                echo '<h4>See on peidetud info.</h4>';
+            } else {
+                echo '<h4>Kõik on saladus.</h4>';
+            }
+        }
 
         echo '<table>';
         for($reanumber = 1; $reanumber <= $ridadeArv; $reanumber++) {
