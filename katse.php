@@ -33,17 +33,26 @@ $toevaartusFalse = false;
  * */
 $naitaSisu = 0;
 $naitaPeidetudInfo = 1;
+// tsüklid
+// for
+/*
+ * for($juhtimisMuutuja = algväärtus; $juhtimisMuutuja <= lõppväärtus; $juhtimisMuutuja++) {
+ *      tegevused, mis toimuvad niikaua, kui $juhtimisMuutuja <= lõppväärtus kehtib
+ * }
+ * */
+$ridadeArv = 4;
 // teksti väljastamine
     echo '
     <!doctype html>
     <html>
         <head>
             <title> ' . $lehePealkiri . ' </title>
+            <link type="text/css" rel="stylesheet" href="style.css">
         </head> 
         <body>';
 
-        if($naitaSisu == true) {
-            echo '<h1>' . $sisuPealkiri . '</h1>';
+//        if($naitaSisu == true) {
+//            echo '<h1>' . $sisuPealkiri . '</h1>';
 //      echo '
 //                    <h1> ' . $sisuPealkiri . ' </h1>
 //                    <h3>Andmetüübid</h3>
@@ -62,17 +71,28 @@ $naitaPeidetudInfo = 1;
 //            echo $taisarv . ' + ' . $taisarv . ' = ' . ($taisarv + $taisarv);
 //            echo '<br>';
 //            echo gettype($taisarv);
-        } else if($naitaSisu == 1) {
-            echo '<h4>See on tavaline info.</h4>';
-        } else if($naitaSisu == 0){
-            echo '<h4>See on tavaline peidetud info.</h4>';
-        } else {
+//        } else if($naitaSisu == 1) {
+//            echo '<h4>See on tavaline info.</h4>';
+//        } else if($naitaSisu == 0){
+//            echo '<h4>See on tavaline peidetud info.</h4>';
+//        } else {
 //            if ($naitaPeidetudInfo == true) {
 //                echo '<h4>See on peidetud info.</h4>';
 //            } else {
-                echo '<h4>Kõik on saladus.</h4>';
+//                echo '<h4>Kõik on saladus.</h4>';
 //            }
+//        }
+
+        echo '<table>';
+        for($reanumber = 1; $reanumber <= $ridadeArv; $reanumber++) {
+            echo '<tr>';
+                echo '<td>';
+                    echo $reanumber;
+                echo '</td>';
+            echo '</tr>';
         }
+
+        echo '</table>';
 
 // html lehe lõpp
     echo '      

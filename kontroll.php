@@ -30,7 +30,7 @@ $kursuseTahis = 'KD';
 $kursuseNumber = 18;
 $email = 'karolin.laas@khk.ee';
 
-$varv = 'oranz';
+$varv = 'sinine';
 
 echo '
  <!doctype html>
@@ -50,7 +50,7 @@ echo '
             } else if($varv == 'oranz') {
                 echo '<h3 style="color: orange">Värviline tekst</h3>';
             } else {
-                echo '<h3>Teksti värvi pole valitud</h3>';
+                echo '<h3>Sobiv värv pole valitud</h3>';
             }
 echo '
         </body>
