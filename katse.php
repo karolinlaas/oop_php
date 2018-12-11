@@ -31,7 +31,7 @@ $toevaartusFalse = false;
  *      muidu toimub see osa
  * }
  * */
-$naitaSisu = true;
+$naitaSisu = false;
 // teksti väljastamine
     echo '
     <!doctype html>
@@ -60,6 +60,8 @@ $naitaSisu = true;
             echo $taisarv . ' + ' . $taisarv . ' = ' . ($taisarv + $taisarv);
             echo '<br>';
             echo gettype($taisarv);
+    } else {
+        echo 'Sisu on peidetud';
     }
 
     echo '      
