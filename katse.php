@@ -40,7 +40,8 @@ $naitaPeidetudInfo = 1;
  *      tegevused, mis toimuvad niikaua, kui $juhtimisMuutuja <= lõppväärtus kehtib
  * }
  * */
-$ridadeArv = 4;
+$ridadeArv = 7;
+$veergudeArv = 5;
 // teksti väljastamine
     echo '
     <!doctype html>
@@ -86,9 +87,11 @@ $ridadeArv = 4;
         echo '<table>';
         for($reanumber = 1; $reanumber <= $ridadeArv; $reanumber++) {
             echo '<tr>';
+            for ($veeruNumber = 1; $veeruNumber <= $veergudeArv; $veeruNumber++) {
                 echo '<td>';
-                    echo $reanumber;
+                echo $reanumber;
                 echo '</td>';
+             }
             echo '</tr>';
         }
 
