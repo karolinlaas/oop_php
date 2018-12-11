@@ -74,7 +74,26 @@ echo '
                 echo '</tr>';
             }
 
+            echo '</table> <br>';
+
+            echo '<table>';
+            $ridadeArv = 6;
+            $veergudeArv = 5;
+            for($reaNumber = 1; $reaNumber <= $ridadeArv; $reaNumber++){
+                echo '<tr>';
+                for($veeruNumber = 1; $veeruNumber <= $veergudeArv; $veeruNumber++) {
+                    $varv = '#';
+                    for ($i = 1; $i <= 6; $i++){
+                        $varv = $varv.dechex(rand(0, 16));
+                    }
+                    echo '<td style="background-color: '.$varv.'">';
+                    echo $veeruNumber;
+                    echo '</td>';
+                }
+                echo '</tr>';
+            }
             echo '</table>';
+
 echo '
         </body>
     </html>
