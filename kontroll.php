@@ -50,7 +50,7 @@ echo '
         <body>
             <h2>Minu nimi on '.$eesnimi.' '.$perekonnanimi.'</h2> 
             <h3>Õpin kursusel '.$kursuseTahis.$kursuseNumber.'</h3>
-            <h3>Minu kooli e-mail on '.$email.'</h3>';
+            <h3>Minu kooli e-mail on '.$email.'</h3> <hr>';
 
             if($varv == 'punane') {
                 echo '<h3 style="color: red">Värviline tekst</h3>';
@@ -62,7 +62,7 @@ echo '
                 echo '<h3>Sobiv värv pole valitud</h3>';
             }
 
-            echo '<table>';
+            echo '<hr> <table>';
             for($reanumber = 2; $reanumber <= $ridadeArv; $reanumber++) {
                 echo '<tr>';
                 for ($veeruNumber = 1; $veeruNumber <= $veergudeArv; $veeruNumber++) {
