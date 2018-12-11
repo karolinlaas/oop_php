@@ -31,7 +31,8 @@ $toevaartusFalse = false;
  *      muidu toimub see osa
  * }
  * */
-$naitaSisu = false;
+$naitaSisu = true;
+$naitaPeidetudInfo = true;
 // teksti väljastamine
     echo '
     <!doctype html>
@@ -61,7 +62,11 @@ $naitaSisu = false;
             echo '<br>';
             echo gettype($taisarv);
     } else {
-        echo 'Sisu on peidetud';
+        if ($naitaPeidetudInfo == true) {
+            echo '<h4>See on peidetud info</h4>';
+        } else {
+            echo '<h4>Kõik on saladus</h4>';
+        }
     }
 
     echo '      
