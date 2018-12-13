@@ -49,6 +49,14 @@ $naitaPeidetudInfo = 0;
  *      mis antud funktsiooni sees toimuvad
  * }
  * */
+
+// Massiivid
+// array();
+/*
+ * $massiiv = array() // tühi massiiv, siin ei ole midagi
+ * $massiiv() = väärtus
+ * */
+
 // teksti väljastamine
 //    echo '
 //    <!doctype html>
@@ -102,6 +110,15 @@ function htmlTabel($ridadeArv = 0, $veergudeArv = 0) {
     $tabel = $tabel.'</table>';
     return $tabel;
 }
+
+//massiiv
+$nimed = array();
+$nimed[] = 'Anna';
+$nimed[] = 'Elen';
+var_dump($nimed);
+echo '<pre>';
+print_r($nimed);
+echo  '</pre>';
 
 // lehe sisu väljastamine
 echo '
