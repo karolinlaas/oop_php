@@ -84,7 +84,7 @@ echo '
                 for($veeruNumber = 1; $veeruNumber <= $veergudeArv; $veeruNumber++) {
                     $varv = '#';
                     for ($i = 1; $i <= 6; $i++){
-                        $varv = $varv.dechex(rand(0, 16));
+                        $varv = $varv.dechex(rand(6, 14));
                     }
                     echo '<td style="background-color: '.$varv.'">';
                     echo $veeruNumber;

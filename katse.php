@@ -8,7 +8,7 @@
 
 // muutujate defineerimine
 // $muutujaNimi = väärtus;
-$lehePealkiri = 'Katse leht';
+$lehePealkiri = 'Funktsioonid';
 $sisuPealkiri = 'Muutujate defineerimine';
 //Muutujate sisu testvaatamine
 //var_dump($lehePealkiri);
@@ -40,62 +40,85 @@ $naitaPeidetudInfo = 0;
  *      tegevused, mis toimuvad niikaua, kui $juhtimisMuutuja <= lõppväärtus kehtib
  * }
  * */
-$ridadeArv = 7;
-$veergudeArv = 5;
+//$ridadeArv = 7;
+//$veergudeArv = 5;
+//Funktsioonid
+/*
+ * function funktsiooniNimi([$parameeter1], $parameeter2, ..., $paramN) {
+ *      kõik tegevused,
+ *      mis antud funktsiooni sees toimuvad
+ * }
+ * */
 // teksti väljastamine
-    echo '
-    <!doctype html>
-    <html>
-        <head>
-            <title> ' . $lehePealkiri . ' </title>
-            <link type="text/css" rel="stylesheet" href="style.css">
-        </head> 
-        <body>';
+//    echo '
+//    <!doctype html>
+//    <html>
+//        <head>
+//            <title> ' . $lehePealkiri . ' </title>
+//            <link type="text/css" rel="stylesheet" href="style.css">
+//        </head>
+//        <body>';
 
-        if($naitaSisu == true) {
-            echo '<h1>' . $sisuPealkiri . '</h1>';
-      echo '
-                    <h1> ' . $sisuPealkiri . ' </h1>
-                    <h3>Andmetüübid</h3>
-                    <ul>
-                        <li>$taisarv = ' . $taisarv . ' - ' . gettype($taisarv) . '</li>
-                        <li>$reaalarv = ' . $reaalarv . ' - ' . gettype($reaalarv) . '</li>
-                        <li>$tekst = ' . $tekst . ' - ' . gettype($tekst) . '</li>
-                        <li>$toevaartusTrue = ' . $toevaartusTrue . ' - ' . gettype($toevaartusTrue) . '</li>
-                        <li>$toevaartusFalse = ' . $toevaartusFalse . ' - ' . gettype($toevaartusFalse) . '</li>
-                    </ul>
-                    ';
-            // tüübi teisendamise katse
-            echo $taisarv . ' + ' . $taisarv . ' = ' . ($taisarv + $taisarv);
-            echo '<br>';
-            settype($taisarv, 'string');
-            echo $taisarv . ' + ' . $taisarv . ' = ' . ($taisarv + $taisarv);
-            echo '<br>';
-            echo gettype($taisarv);
-        } else {
-            if ($naitaPeidetudInfo == true) {
-                echo '<h4>See on peidetud info.</h4>';
-            } else {
-                echo '<h4>Kõik on saladus.</h4>';
+//        if($naitaSisu == true) {
+//            echo '<h1>' . $sisuPealkiri . '</h1>';
+//      echo '
+//                    <h1> ' . $sisuPealkiri . ' </h1>
+//                    <h3>Andmetüübid</h3>
+//                    <ul>
+//                        <li>$taisarv = ' . $taisarv . ' - ' . gettype($taisarv) . '</li>
+//                        <li>$reaalarv = ' . $reaalarv . ' - ' . gettype($reaalarv) . '</li>
+//                        <li>$tekst = ' . $tekst . ' - ' . gettype($tekst) . '</li>
+//                        <li>$toevaartusTrue = ' . $toevaartusTrue . ' - ' . gettype($toevaartusTrue) . '</li>
+//                        <li>$toevaartusFalse = ' . $toevaartusFalse . ' - ' . gettype($toevaartusFalse) . '</li>
+//                    </ul>
+//                    ';
+//            // tüübi teisendamise katse
+//            echo $taisarv . ' + ' . $taisarv . ' = ' . ($taisarv + $taisarv);
+//            echo '<br>';
+//            settype($taisarv, 'string');
+//            echo $taisarv . ' + ' . $taisarv . ' = ' . ($taisarv + $taisarv);
+//            echo '<br>';
+//            echo gettype($taisarv);
+//        } else {
+//            if ($naitaPeidetudInfo == true) {
+//                echo '<h4>See on peidetud info.</h4>';
+//            } else {
+//                echo '<h4>Kõik on saladus.</h4>';
+//            }
+//        }
+
+
+        function htmlTabel($ridadeArv, $veergudeArv) {
+            echo '<table>';
+            for ($reanumber = 1; $reanumber <= $ridadeArv; $reanumber++) {
+                echo '<tr>';
+                for ($veeruNumber = 1; $veeruNumber <= $veergudeArv; $veeruNumber++) {
+                    echo '<td>';
+                    echo $reanumber;
+                    echo '</td>';
+                }
+                echo '</tr>';
             }
+
+            echo '</table>';
         }
 
-        echo '<table>';
-        for($reanumber = 1; $reanumber <= $ridadeArv; $reanumber++) {
-            echo '<tr>';
-            for ($veeruNumber = 1; $veeruNumber <= $veergudeArv; $veeruNumber++) {
-                echo '<td>';
-                echo $reanumber;
-                echo '</td>';
-             }
-            echo '</tr>';
-        }
 
-        echo '</table>';
+echo '
+<!doctype html>
+<html>
+    <head>
+        <title> Funkstioon </title>
+        <link type="text/css" rel="stylesheet" href="style.css">
+    </head> 
+    <body>';
 
-// html lehe lõpp
-    echo '      
-        </body> 
-    </html>
-    ';
+htmlTabel(4, 4);
+echo '<hr>';
+htmlTabel(2, 5);
+
+echo '      
+    </body> 
+</html>
+';
 ?>
