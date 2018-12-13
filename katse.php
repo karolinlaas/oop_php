@@ -21,7 +21,6 @@
  * $massiiv() = väärtus
  * */
 
-
 //funktsioon
 function htmlTabel($ridadeArv = 0, $veergudeArv = 0) {
     $tabel = '<table>';
@@ -80,6 +79,8 @@ foreach ($numbrid as $rida) {
     echo '<br>';
 }
 
+
+
 // lehe sisu väljastamine
 echo '
 <!doctype html>
@@ -99,6 +100,8 @@ echo $tabel2;
 echo '<hr>';
 $tabel3 = htmlTabel(1, 2);
 echo $tabel3;
+
+
 
 echo '      
     </body> 
