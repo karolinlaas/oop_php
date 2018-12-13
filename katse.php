@@ -112,13 +112,17 @@ function htmlTabel($ridadeArv = 0, $veergudeArv = 0) {
 }
 
 //massiiv
-$nimed = array();
-$nimed[] = 'Anna';
-$nimed[] = 'Elen';
-var_dump($nimed);
+$numbrid = array(
+    array(1, 2, 3),
+    array(1, 2, 3),
+    array(1, 2, 3)
+);
+var_dump($numbrid);
 echo '<pre>';
-print_r($nimed);
-echo  '</pre>';
+print_r($numbrid);
+echo '</pre>';
+
+echo $numbrid[1][1];
 
 // lehe sisu väljastamine
 echo '
