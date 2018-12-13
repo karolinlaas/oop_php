@@ -53,10 +53,12 @@ echo '
             <link type="text/css" rel="stylesheet" href="style.css">
         </head> 
         <body>
+        
             <h2>Minu nimi on '.$eesnimi.' '.$perekonnanimi.'</h2> 
             <h3>Õpin kursusel '.$kursuseTahis.$kursuseNumber.'</h3>
             <h3>Minu kooli e-mail on '.$email.'</h3> <hr>';
 
+//          if-i kasutamine - ül 2
             if($varv == 'punane') {
                 echo '<h3 style="color: red">Värviline tekst</h3>';
             } else if($varv == 'sinine') {
@@ -67,6 +69,7 @@ echo '
                 echo '<h3>Sobiv värv pole valitud</h3>';
             }
 
+//          For loopi kasutamine - ül 3
             echo '<hr> <table>';
             for($reanumber = 2; $reanumber <= $ridadeArv; $reanumber++) {
                 echo '<tr>';
@@ -100,7 +103,7 @@ echo '
             echo '</table>';
             echo '<hr>';
 
-//          Array ehk massiiv
+//          Array ehk massiiv - ül 4
             function htmlTabel($massiiv){
                 echo '<table>';
                 foreach($massiiv as $rida){
@@ -118,6 +121,7 @@ echo '
                 array(1, 2, 3),
                 array(4, 5, 6)
             );
+
             htmlTabel($numbrid);
             echo '<br>';
             $symbolid = array(
