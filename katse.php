@@ -145,6 +145,13 @@ for($reaNumber = 0; $reaNumber < $ridadeArv; $reaNumber++) {
     echo '<br>';
 }
 
+// massiivi väljastamine foreach'iga
+foreach ($numbrid as $rida) {
+    foreach ($rida as $number) {
+        echo $number.'&nbsp';
+    }
+    echo '<br>';
+}
 
 // lehe sisu väljastamine
 echo '
