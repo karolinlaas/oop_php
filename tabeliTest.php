@@ -16,5 +16,10 @@ $lihtTabel->lisaRida(array(1, 2, 3));
 $lihtTabel->lisaRida(array(4, 5, 6));
 $lihtTabel->lisaRida(array(7, 8, 9));
 
+var_dump($lihtTabel);
+echo '<pre>';
+print_r($lihtTabel);
+echo '</pre>';
+
 //  tabeli väljastamine
 $lihtTabel->naitaTabel();
