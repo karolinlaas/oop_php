@@ -29,6 +29,11 @@ b) väljastatud muutjate väärtused koos sobiva tekstiga html faili kujul
  * Loo tabelis gradient, kasutades for loopi
  * */
 
+// Ülesanne 4
+/* Muuda htmlTabel() funktsioon nii, et see võtaks parameetrina numbrite massiivi
+ja väljastas HTML tabelina
+*/
+
 $eesnimi = 'Karolin';
 $perekonnanimi = 'Laas';
 $kursuseTahis = 'KD';
@@ -93,6 +98,34 @@ echo '
                 echo '</tr>';
             }
             echo '</table>';
+            echo '<hr>';
+
+//          Array ehk massiiv
+            function htmlTabel($massiiv){
+                echo '<table>';
+                foreach($massiiv as $rida){
+                    echo '<tr>';
+                    foreach($rida as $element) {
+                        echo '<td>';
+                        echo $element;
+                        echo '</td>';
+                    }
+                    echo '</tr>';
+                }
+                echo '</table>';
+            }
+            $numbrid = array(
+                array(1, 2, 3),
+                array(4, 5, 6)
+            );
+            htmlTabel($numbrid);
+            echo '<br>';
+            $symbolid = array(
+                array('a', 'b'),
+                array('d', 'e'),
+                array('g', 'h')
+            );
+            htmlTabel($symbolid);
 
 echo '
         </body>
