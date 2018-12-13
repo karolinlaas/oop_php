@@ -87,23 +87,23 @@ $naitaPeidetudInfo = 0;
 //            }
 //        }
 
-
-        function htmlTabel($ridadeArv, $veergudeArv) {
-            echo '<table>';
-            for ($reanumber = 1; $reanumber <= $ridadeArv; $reanumber++) {
-                echo '<tr>';
-                for ($veeruNumber = 1; $veeruNumber <= $veergudeArv; $veeruNumber++) {
-                    echo '<td>';
-                    echo $reanumber;
-                    echo '</td>';
-                }
-                echo '</tr>';
-            }
-
-            echo '</table>';
+//funktsioon
+function htmlTabel($ridadeArv = 0, $veergudeArv = 0) {
+    $tabel = '<table>';
+    for ($reanumber = 1; $reanumber <= $ridadeArv; $reanumber++) {
+        $tabel = $tabel.'<tr>';
+        for ($veeruNumber = 1; $veeruNumber <= $veergudeArv; $veeruNumber++) {
+            $tabel = $tabel.'<td>';
+            $tabel = $tabel.$reanumber;
+            $tabel = $tabel.'</td>';
         }
+        $tabel = $tabel.'</tr>';
+    }
+    $tabel = $tabel.'</table>';
+    return $tabel;
+}
 
-
+// lehe sisu väljastamine
 echo '
 <!doctype html>
 <html>
@@ -113,9 +113,15 @@ echo '
     </head> 
     <body>';
 
-htmlTabel(4, 4);
+// funktsiooni tööle kutsumine
+$tabel1 = htmlTabel(4, 4);
+echo $tabel1;
 echo '<hr>';
-htmlTabel(2, 5);
+$tabel2 = htmlTabel(2, 5);
+echo $tabel2;
+echo '<hr>';
+$tabel3 = htmlTabel(1, 2);
+echo $tabel3;
 
 echo '      
     </body> 
