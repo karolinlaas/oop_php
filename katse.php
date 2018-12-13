@@ -111,18 +111,40 @@ function htmlTabel($ridadeArv = 0, $veergudeArv = 0) {
     return $tabel;
 }
 
-//massiiv
+//massiivi loomine
 $numbrid = array(
     array(1, 2, 3),
-    array(1, 2, 3),
-    array(1, 2, 3)
+    array(4, 5, 6)
 );
+
+// massiivi sisu testkontroll
 var_dump($numbrid);
 echo '<pre>';
 print_r($numbrid);
 echo '</pre>';
 
+// massiivi elemendi väljastamine
 echo $numbrid[1][1];
+echo '<br>';
+
+// massiivi suuruse kontoll - ridade arv
+$ridadeArv = count($numbrid);
+echo $ridadeArv;
+echo '<br>';
+
+// veergudeArv
+$veergudeArv = count($numbrid[0]);
+echo $veergudeArv;
+echo '<br>';
+
+//massiivi väljastamine for'iga
+for($reaNumber = 0; $reaNumber < $ridadeArv; $reaNumber++) {
+    for($veeruNumber = 0; $veeruNumber < $veergudeArv; $veeruNumber++) {
+        echo $numbrid[$reaNumber][$veeruNumber].'&nbsp';
+    }
+    echo '<br>';
+}
+
 
 // lehe sisu väljastamine
 echo '
