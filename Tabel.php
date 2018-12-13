@@ -13,6 +13,13 @@ class Tabel
 //    var $rida = array();
 
 //  klassi meetodid
+    /**
+     * Tabel constructor.
+     */
+    public function __construct()
+    {
+        echo 'Tabel tüüpi objekt on loodud. <br>';
+    }
 
     /**
      * @param $rida - massiiv (generate-> PHPdoc blocks)
