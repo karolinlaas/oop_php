@@ -1,6 +1,7 @@
 <style>
     form {
-        margin: 30px;
+        margin: auto;
+        margin-top: 30px;
         padding: 10px;
         border: solid 1px black;
         width: 300px;
@@ -14,6 +15,10 @@
         border-style: solid;
         border-width: 0.5px;
         padding: 5px;
+    }
+
+    input[type=submit] {
+        width: 100px;
     }
 
 
