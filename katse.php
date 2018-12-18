@@ -15,23 +15,33 @@
  * */
 
 // Massiivi loomine
-$porsasPeppa = array(
-    'nimi' => 'Peppa',
-    'amet' => 'põrsaslaps',
-    'vanus' => 5,
-    'sugu' => 'naine');
-
-$porsasGeorg = array(
-    'nimi' => 'Georg',
-    'amet' => 'põrsaslaps',
-    'vanus' => 2,
-    'sugu' => 'mees'
+$perekondPeppa = array(
+    'Peppa' => array(
+        'nimi' => 'Peppa',
+        'amet' => 'põrsaslaps',
+        'vanus' => 5,
+        'sugu' => 'naine'
+    ),
+    'Georg' => array(
+        'nimi' => 'Georg',
+        'amet' => 'põrsaslaps',
+        'vanus' => 2,
+        'sugu' => 'mees'
+    )
 );
+
+echo '<pre>';
+print_r($perekondPeppa);
+echo '</pre>';
 
 // massiivi väljastamine
 function valjastaInfo($massiiv) {
-    foreach($massiiv as $elemendiNimi=>$elemendiVaartus) {
-        echo $elemendiNimi.' - '.$elemendiVaartus.'<br>';
+    foreach ($massiiv as $alamMassiiviNimi => $alamMassiivAndmed) {
+        echo '<b>'.$alamMassiiviNimi.'</b><br>';
+        foreach ($alamMassiivAndmed as $elemendiNimi => $elemendiVaartus) {
+            echo $elemendiNimi.' - '.$elemendiVaartus.'<br>';
+        }
+        echo '<hr>';
     }
 }
 
@@ -45,10 +55,7 @@ echo '
     </head> 
     <body>';
 
-valjastaInfo($porsasPeppa);
-echo '<br>';
-valjastaInfo($porsasGeorg);
-
+valjastaInfo($perekondPeppa);
 
 
 echo '      
