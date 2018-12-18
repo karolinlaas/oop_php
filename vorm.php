@@ -19,6 +19,7 @@
 
 </style>
 
+<div class="test">
 <form method="post" action="vormitootlus.php">
     <div>
         <label>Kasutajanimi:</label>
@@ -37,3 +38,4 @@
     </div>
 
 </form>
+</div>
