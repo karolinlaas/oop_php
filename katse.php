@@ -34,12 +34,22 @@ echo '<pre>';
 print_r($perekondPeppa);
 echo '</pre>';
 
-// massiivi väljastamine
+// massiivi väljastamine - funktsioon
+function suguVarv($sugu) {
+    if ($sugu == 'naine') {
+        echo '<div style="color: red">';
+    } else {
+        echo '<div style="color: blue">';
+    }
+}
+
 function valjastaInfo($massiiv) {
-    foreach ($massiiv as $alamMassiiviNimi => $alamMassiivAndmed) {
-        echo '<b>'.$alamMassiiviNimi.'</b><br>';
+    foreach ($massiiv as $alamMassiivNimi => $alamMassiivAndmed) {
+        suguVarv($alamMassiivAndmed['sugu']);
+        echo '<b>'.$alamMassiivNimi.'</b>';
         foreach ($alamMassiivAndmed as $elemendiNimi => $elemendiVaartus) {
-            echo $elemendiNimi.' - '.$elemendiVaartus.'<br>';
+            suguVarv($alamMassiivAndmed['sugu']);
+            echo $elemendiNimi.' - '.$elemendiVaartus.'</div>';
         }
         echo '<hr>';
     }
