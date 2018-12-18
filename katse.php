@@ -14,37 +14,9 @@
  * $massiiv() = väärtus
  * */
 
-// Massiivi loomine
-$perekondPeppa = array(
-    'Peppa' => array(
-        'nimi' => 'Peppa',
-        'amet' => 'põrsaslaps',
-        'vanus' => 5,
-        'sugu' => 'naine'
-    ),
-    'Georg' => array(
-        'nimi' => 'Georg',
-        'amet' => 'põrsaslaps',
-        'vanus' => 2,
-        'sugu' => 'mees'
-    ),
-    'Ema' => array(
-        'nimi' => 'Ema Põrsas',
-        'amet' => 'põrsasema',
-        'vanus' => 35,
-        'sugu' => 'naine'
-    ),
-    'Isa' => array(
-        'nimi' => 'Isa Põrsas',
-        'amet' => 'põrsasisa',
-        'vanus' => 37,
-        'sugu' => 'mees'
-    )
-);
-
-echo '<pre>';
-print_r($perekondPeppa);
-echo '</pre>';
+//sort($perekondPeppa); //tähestiku järjekorras
+//asort($perekondPeppa); //tähestiku järjekord aga nimed jätab alles
+//ksort($perekondPeppa); //võtmete järgi sorteerimine
 
 // massiivi väljastamine - funktsioon
 function suguVarv($sugu) {
@@ -67,6 +39,42 @@ function valjastaInfo($massiiv) {
     }
 }
 
+function suguVordlus($porsas1, $porsas2) {
+    if ($porsas1['sugu'] == $porsas2['sugu']) {
+        return 0; }
+    return ($porsas1['sugu'] < $porsas2['sugu']) ? -1 : 1;
+}
+
+// Massiivi loomine
+$perekondPeppa = array(
+    'Peppa' => array(
+        'nimi' => 'Peppa',
+        'amet' => 'põrsaslaps',
+        'vanus' => 5,
+        'sugu' => 'naine'
+    ),
+    'Georg' => array(
+        'nimi' => 'Georg',
+        'amet' => 'põrsaslaps',
+        'vanus' => 2,
+        'sugu' => 'mees'
+    ),
+    'Põrsas Ema' => array(
+        'nimi' => 'Ema Põrsas',
+        'amet' => 'põrsasema',
+        'vanus' => 35,
+        'sugu' => 'naine'
+    ),
+    'Põrsas Isa' => array(
+        'nimi' => 'Isa Põrsas',
+        'amet' => 'põrsasisa',
+        'vanus' => 37,
+        'sugu' => 'mees'
+    )
+);
+
+uasort($perekondPeppa, 'suguVordlus');
+
 // lehe sisu väljastamine
 echo '
 <!doctype html>
@@ -78,7 +86,6 @@ echo '
     <body>';
 
 valjastaInfo($perekondPeppa);
-
 
 echo '      
     </body> 
