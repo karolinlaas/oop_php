@@ -1,7 +1,7 @@
 <?php
 function vorm() {
     echo '
-    <form method = "post" action = '.$_SERVER['PHP_SELF'].' >
+    <form method = "post" action = '.$_SERVER['PHP_SELF'].'>
     <div >
         <label > Kasutajanimi</label ><br >
         <input type = "text" name = "username" >
