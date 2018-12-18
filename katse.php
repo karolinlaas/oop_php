@@ -27,6 +27,18 @@ $perekondPeppa = array(
         'amet' => 'põrsaslaps',
         'vanus' => 2,
         'sugu' => 'mees'
+    ),
+    'Ema' => array(
+        'nimi' => 'Ema Põrsas',
+        'amet' => 'põrsasema',
+        'vanus' => 35,
+        'sugu' => 'naine'
+    ),
+    'Isa' => array(
+        'nimi' => 'Isa Põrsas',
+        'amet' => 'põrsasisa',
+        'vanus' => 37,
+        'sugu' => 'mees'
     )
 );
 
