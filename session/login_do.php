@@ -13,10 +13,15 @@ if (empty($_POST)) {
     header('Location: login.php');
     $_SESSION['viga'] = 'Sisesta parool';
 } else {
+    session_destroy(); // Lõpetan veateate sessiooni
+    session_start(); // Alustan sisselogitud kasutaja sessiooniga
+    session_regenerate_id(); // Määrame uue sessiooni ID
     echo session_id();
+    $_SESSION['username'] = $_POST['username'];
     echo '<pre>';
     print_r($_SESSION);
     echo '</pre>';
+    echo 'Oled sisse loginud, '.$_SESSION['username'].'.';
 }
 
 
