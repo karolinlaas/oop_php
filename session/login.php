@@ -1,6 +1,8 @@
 <?php
 // session/login.php
 session_start(); // alustame anonüümse sessiooniga
+echo session_id();
+echo '<br>';
 echo '<div style="color: red">'.$_SESSION['viga'].'</div>';
 
 ?>

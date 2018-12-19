@@ -12,6 +12,11 @@ if (empty($_POST)) {
 } else if (empty($_POST['password'])) {
     header('Location: login.php');
     $_SESSION['viga'] = 'Sisesta parool';
+} else {
+    echo session_id();
+    echo '<pre>';
+    print_r($_SESSION);
+    echo '</pre>';
 }
 
 
