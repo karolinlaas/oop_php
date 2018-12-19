@@ -2,6 +2,7 @@
 // session/login_do.php
 
 session_start(); // jätkame login.oho faili sessiooni
+session_regenerate_id();
 
 if (empty($_POST)) {
     header('Location: login.php');
@@ -22,6 +23,9 @@ if (empty($_POST)) {
     print_r($_SESSION);
     echo '</pre>';
     echo 'Oled sisse loginud, '.$_SESSION['username'].'.';
+    echo '<br>';
+    echo '<br>';
+    echo '<a href="logout.php">Logi välja</a>';
 }
 
 
