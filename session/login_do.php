@@ -22,6 +22,9 @@ if (empty($_POST)) {
     echo '<pre>';
     print_r($_SESSION);
     echo '</pre>';
+    echo '<a href="test.php">Sessiooni katse</a>';
+    echo '<br>';
+    echo '<br>';
     echo 'Oled sisse loginud, '.$_SESSION['username'].'.';
     echo '<br>';
     echo '<br>';
