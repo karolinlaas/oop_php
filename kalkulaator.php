@@ -26,14 +26,14 @@
      echo '<form method="post" action="'.$_SERVER['PHP_SELF'].'">
         <label>Sisesta esimene number</label>
         <br>
-        <input type="number" name="esimeneNR">
+        <input type="number" name="number1">
         <br>
         <label>Sisesta teine number</label>
         <br>
-        <input type="number" name="tegevus">
+        <input type="number" name="number2">
         <br>
         <label>Vali tegevus</label>
-          <select name="operatsioon">
+          <select name="operation">
             <option value="liida">Liida</option>
             <option value="lahuta">Lahuta</option>
             <option value="korruta">Korruta</option>
@@ -44,18 +44,18 @@
         <!--<input type="submit" value="Tühjenda">-->
         <br>
         <label>Tulemus: </label>
-        <input type="text" value='.$tulemus.'>
+        <input type="text" value="'.$tulemus.'">
     </form>';}
 
-function calc($arv1, $arv2, $operatsioon) {
-    if ($operatsioon == 'Liida') {
-        $tulemus = $arv1 + $arv2;
-    } else if ($operatsioon == 'Lahuta'){
-        $tulemus = $arv1 - $arv2;
-    } else if ($operatsioon == 'Korruta') {
-        $tulemus = $arv1 * $arv2;
-    } else if ($operatsioon == 'Jaga') {
-        $tulemus = $arv1 / $arv2;
+function calc($esimeneNR, $teineNR, $operation) {
+    if ($operation == 'liida') {
+        $tulemus = $esimeneNR + $teineNR;
+    } else if ($operation == 'lahuta'){
+        $tulemus = $esimeneNR - $teineNR;
+    } else if ($operation == 'korruta') {
+        $tulemus = $esimeneNR * $teineNR;
+    } else if ($operation == 'jaga') {
+        $tulemus = $esimeneNR / $teineNR;
     } else {
         $tulemus = false;
     }
@@ -66,14 +66,16 @@ if (empty($_POST)) {
 //    echo '<a href="vorm.php">Logi sisse!</a>';
     vorm();
 } else {
-    $esimeneNR = $_POST['esimeneNR'];
-    $teineNR = $_POST['teineNR'];
+    $number1 = $_POST['number1'];
+    $number2 = $_POST['number2'];
     $operation = $_POST['operation'];
     if(empty($number1) or empty($number2)){
         echo 'Sisesta numbrid!<br>';
         echo '<a href=' . $_SERVER['PHP_SELF'] . '>Proovi uuesti</a>';
         exit;
     }
+    $tulemus = calc($number1, $number2, $operation);
+    vorm($tulemus);
 }
 
 ;?>
